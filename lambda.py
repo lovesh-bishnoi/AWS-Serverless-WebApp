@@ -18,8 +18,13 @@ now = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
 def lambda_handler(event, context):
     # extract the two numbers from the Lambda service's event object
     hours = int(event.get('hours'))
+    while hours > 23:
+        print("The number of hours should be between 0 and 23")
+        hours = int(event.get('hours'))
     mins = int(event.get('mins'))
-
+    while mins > 59:
+        print("The number of minutes should be between 0 and 59")
+        mins = int(event.get('mins'))
     if hours > 12:
         hours = hours - 12
     angle_mins = mins * 6
