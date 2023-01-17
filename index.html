@@ -57,7 +57,7 @@
                 redirect: 'follow'
             };
             // make API call with parameters and use promises to get response
-            fetch("https://3kon3pjeki.execute-api.eu-central-1.amazonaws.com/dev", requestOptions)
+            fetch("YOUR API GATEWAY ENDPOINT", requestOptions)
             .then(response => response.text())
             .then(result => alert(JSON.parse(result).body))
             .catch(error => console.log('error', error));
@@ -65,15 +65,14 @@
     </script>
 </head>
 <body>
-    <h1><div style="text-align: center;">!Analog clock angles 🕓 – the angle between clock hands!</h1>
-	<form style="text-align: center;">
-        <br><label>Enter the number of hours in between 0 and 23:</label>
+    <h1><center>🕓 Analog clock angles 🕓 – the angle between clock hands!!</h1></center>
+	<form><center>
+        <br><label>Hours:</label>
         <input type="text" id="hours">
-        <br><label>Enter the number of minutes in between 0 and 59:</label>
+        <label>Minutes:</label>
         <input type="text" id="mins">
         <!-- set button onClick method to call function we defined passing input values as parameters -->
-        <br>
-        <button type="button" onclick="callAPI(document.getElementById('hours').value,document.getElementById('mins').value)">CALCULATE</button>
-    </form>
+        <br><button type="button" onclick="callAPI(document.getElementById('hours').value,document.getElementById('mins').value)">CALCULATE</button>
+    </form></center>
 </body>
 </html>
